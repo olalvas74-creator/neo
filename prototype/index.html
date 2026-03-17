@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Блог NeoFamily — готовься к экзаменам с экспертами</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-top">
+      <div class="container">
+        <a href="/blog/" class="logo">
+          <span class="logo-name">NeoFamily</span><span class="logo-suffix">. Блог</span>
+        </a>
+        <nav class="nav-right" aria-label="Основная навигация">
+          <a href="#" class="nav-link">Банк заданий</a>
+          <a href="#" class="nav-link">Магазин</a>
+          <button class="btn-login" type="button">Войти</button>
+          <button class="btn-search" type="button" aria-label="Поиск">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </div>
+    <div class="category-bar">
+      <div class="container">
+        <button class="cat-tab active" data-cat="actual" type="button">Актуальное</button>
+        <button class="cat-tab" data-cat="ege" type="button">ЕГЭ и поступление</button>
+        <button class="cat-tab" data-cat="bio" type="button">Биология</button>
+        <button class="cat-tab" data-cat="chem" type="button">Химия</button>
+        <button class="cat-tab" data-cat="rus" type="button">Русский язык</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero-section">
+      <div class="container">
+        <h1 class="hero-h1">Блог NeoFamily — готовься к экзаменам с экспертами</h1>
+        <div class="hero-banner">
+          <div class="hero-content">
+            <p class="hero-title">Готовься к ЕГЭ с экспертами NeoFamily</p>
+            <p class="hero-subtitle">Разборы заданий, теория, лайфхаки от преподавателей с опытом 8+ лет</p>
+            <a href="#" class="btn-cta">Смотреть курсы</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== АКТУАЛЬНОЕ ===== -->
+    <section class="category-section" id="actual">
+      <div class="container">
+        <div class="section-header">
+          <h2>Актуальное</h2>
+        </div>
+        <div class="accent-bar" data-cat="actual"></div>
+        <div class="card-grid">
+
+          <article class="card">
+            <div class="card-image">400 &times; 300</div>
+            <div class="card-body">
+              <div class="card-top-row">
+                <span class="category-badge" data-cat="ege">ЕГЭ</span>
+                <span class="read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  5 мин
+                </span>
+              </div>
+              <h3 class="card-title">ЕГЭ-2026: главные изменения, о которых нужно знать уже сейчас</h3>
+              <p class="card-desc">Обзор всех нововведений в ЕГЭ по основным предметам: что изменилось и как готовиться по-новому.</p>
+              <div class="card-author">
+                <div class="author-avatar"></div>
+                <span class="author-name">Анна Петрова</span>
+                <span class="card-dot"></span>
+                <span class="card-date">14 мар 2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">400 &times; 300</div>
+            <div class="card-body">
+              <div class="card-top-row">
+                <span class="category-badge" data-cat="bio">Биология</span>
+                <span class="read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  7 мин
+                </span>
+              </div>
+              <h3 class="card-title">Строение клетки: полный разбор для ЕГЭ по биологии</h3>
+              <p class="card-desc">Прокариоты и эукариоты, органеллы, мембрана — всё, что нужно знать для части 2 экзамена.</p>
+              <div class="card-author">
+                <div class="author-avatar"></div>
+                <span class="author-name">Игорь Сидоров</span>
+                <span class="card-dot"></span>
+                <span class="card-date">12 мар 2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">400 &times; 300</div>
+            <div class="card-body">
+              <div class="card-top-row">
+                <span class="category-badge" data-cat="chem">Химия</span>
+                <span class="read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  6 мин
+                </span>
+              </div>
+              <h3 class="card-title">Окислительно-восстановительные реакции: разбор задания 30</h3>
+              <p class="card-desc">Пошаговый алгоритм расстановки коэффициентов методом электронного баланса.</p>
+              <div class="card-author">
+                <div class="author-avatar"></div>
+                <span class="author-name">Мария Козлова</span>
+                <span class="card-dot"></span>
+                <span class="card-date">10 мар 2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">400 &times; 300</div>
+            <div class="card-body">
+              <div class="card-top-row">
+                <span class="category-badge" data-cat="rus">Русский язык</span>
+                <span class="read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  4 мин
+                </span>
+              </div>
+              <h3 class="card-title">ЕГЭ-2026: все изменения в экзамене по русскому языку</h3>
+              <p class="card-desc">Новая модель сочинения, изменённые критерии и как адаптировать подготовку.</p>
+              <div class="card-author">
+                <div class="author-avatar"></div>
+                <span class="author-name">Елена Волкова</span>
+                <span class="card-dot"></span>
+                <span class="card-date">9 мар 2026</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ЕГЭ И ПОСТУПЛЕНИЕ ===== -->
+    <section class="category-section bg-alt" id="ege">
+      <div class="container">
+        <div class="section-header">
+          <h2>ЕГЭ и поступление</h2>
+          <a href="#" class="section-link" data-cat="ege">Читать ещё &rarr;</a>
+        </div>
+        <div class="accent-bar" data-cat="ege"></div>
+        <div class="card-grid">
+
+          <article class="card">
+            <div class="card-image">400 &times; 300</div>
+            <div class="card-body">
+              <div class="card-top-row">
+                <span class="category-badge" data-cat="ege">ЕГЭ</span>
+                <span class="read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  8 мин
+                </span>
+              </div>
+              <h3 class="card-title">Как выбрать вуз: пошаговый гайд для выпускников 2026</h3>
+              <p class="card-desc">Критерии выбора, рейтинги, проходные баллы — составляем стратегию поступления.</p>
+              <div class="card-author">
+                <div class="author-avatar"></div>
+                <span class="author-name">Дмитрий Орлов</span>
+                <span class="card-dot"></span>
+                <span class="card-date">13 мар 2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">400 &times; 300</div>
+            <div class="card-body">
+              <div class="card-top-row">
+                <span class="category-badge" data-cat="ege">ЕГЭ</span>
+                <span class="read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  5 мин
+                </span>
+              </div>
+              <h3 class="card-title">Расписание ЕГЭ-2026: даты основного и резервного периодов</h3>
+              <p class="card-desc">Полный календарь экзаменов с советами по планированию подготовки к каждому предмету.</p>
+              <div class="card-author">
+                <div class="author-avatar"></div>
+                <span class="author-name">Анна Петрова</span>
+                <span class="card-dot"></span>
+                <span class="card-date">11 мар 2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">400 &times; 300</div>
+            <div class="card-body">
+              <div class="card-top-row">
+                <span class="category-badge" data-cat="ege">ЕГЭ</span>
+                <span class="read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  6 мин
+                </span>
+              </div>
+              <h3 class="card-title">Минимальные баллы ЕГЭ для поступления в топ-20 вузов</h3>
+              <p class="card-desc">Анализ проходных баллов за три года: куда реально поступить и на что рассчитывать.</p>
+              <div class="card-author">
+                <div class="author-avatar"></div>
+                <span class="author-name">Дмитрий Орлов</span>
+                <span class="card-dot"></span>
+                <span class="card-date">8 мар 2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">400 &times; 300</div>
+            <div class="card-body">
+              <div class="card-top-row">
+                <span class="category-badge" data-cat="ege">ЕГЭ</span>
+                <span class="read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  4 мин
+                </span>
+              </div>
+              <h3 class="card-title">Как подать документы в 5 вузов одновременно и не запутаться</h3>
+              <p class="card-desc">Чек-лист документов, сроки подачи и лайфхаки для абитуриентов.</p>
+              <div class="card-author">
+                <div class="author-avatar"></div>
+                <span class="author-name">Анна Петрова</span>
+                <span class="card-dot"></span>
+                <span class="card-date">5 мар 2026</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== БИОЛОГИЯ ===== -->
+    <section class="category-section" id="bio">
+      <div class="container">
+        <div class="section-header">
+          <h2>Биология</h2>
+          <a href="#" class="section-link" data-cat="bio">Читать ещё &rarr;</a>
+        </div>
+        <div class="accent-bar" data-cat="bio"></div>
+        <div class="card-grid">
+
+          <article class="card">
+            <div class="card-image">400 &times; 300</div>
+            <div class="card-body">
+              <div class="card-top-row">
+                <span class="category-badge" data-cat="bio">Биология</span>
+                <span class="read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  7 мин
+                </span>
+              </div>
+              <h3 class="card-title">Как решать задачи на генетику: пошаговый алгоритм</h3>
+              <p class="card-desc">Моногибридное и дигибридное скрещивание, решётка Пеннета — полный разбор типовых задач.</p>
+              <div class="card-author">
+                <div class="author-avatar"></div>
+                <span class="author-name">Игорь Сидоров</span>
+                <span class="card-dot"></span>
+                <span class="card-date">11 мар 2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">400 &times; 300</div>
+            <div class="card-body">
+              <div class="card-top-row">
+                <span class="category-badge" data-cat="bio">Биология</span>
+                <span class="read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  6 мин
+                </span>
+              </div>
+              <h3 class="card-title">Митоз и мейоз: сравнительная таблица и типичные ошибки</h3>
+              <p class="card-desc">Фазы деления, ключевые отличия и ловушки в тестовых заданиях ЕГЭ.</p>
+              <div class="card-author">
+                <div class="author-avatar"></div>
+                <span class="author-name">Игорь Сидоров</span>
+                <span class="card-dot"></span>
+                <span class="card-date">7 мар 2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">400 &times; 300</div>
+            <div class="card-body">
+              <div class="card-top-row">
+                <span class="category-badge" data-cat="bio">Биология</span>
+                <span class="read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  8 мин
+                </span>
+              </div>
+              <h3 class="card-title">Эволюция: от Дарвина до синтетической теории для ЕГЭ</h3>
+              <p class="card-desc">Движущие силы эволюции, доказательства и типовые задания части 2.</p>
+              <div class="card-author">
+                <div class="author-avatar"></div>
+                <span class="author-name">Ольга Белова</span>
+                <span class="card-dot"></span>
+                <span class="card-date">3 мар 2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">400 &times; 300</div>
+            <div class="card-body">
+              <div class="card-top-row">
+                <span class="category-badge" data-cat="bio">Биология</span>
+                <span class="read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  5 мин
+                </span>
+              </div>
+              <h3 class="card-title">Фотосинтез и дыхание: что путают на ЕГЭ по биологии</h3>
+              <p class="card-desc">Световая и темновая фазы, гликолиз, цикл Кребса — разбираем частые ошибки.</p>
+              <div class="card-author">
+                <div class="author-avatar"></div>
+                <span class="author-name">Ольга Белова</span>
+                <span class="card-dot"></span>
+                <span class="card-date">28 фев 2026</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROMO BANNER ===== -->
+    <section class="promo-section">
+      <div class="container">
+        <div class="promo-banner">
+          <div class="promo-text">
+            <h2>Подпишись на рассылку</h2>
+            <p>Полезные материалы, разборы заданий и лайфхаки — раз в неделю на почту</p>
+          </div>
+          <form class="promo-form" action="#" method="post">
+            <input type="email" placeholder="Введите email" required>
+            <button type="submit">Подписаться</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ХИМИЯ ===== -->
+    <section class="category-section bg-alt" id="chem">
+      <div class="container">
+        <div class="section-header">
+          <h2>Химия</h2>
+          <a href="#" class="section-link" data-cat="chem">Читать ещё &rarr;</a>
+        </div>
+        <div class="accent-bar" data-cat="chem"></div>
+        <div class="card-grid">
+
+          <article class="card">
+            <div class="card-image">400 &times; 300</div>
+            <div class="card-body">
+              <div class="card-top-row">
+                <span class="category-badge" data-cat="chem">Химия</span>
+                <span class="read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  7 мин
+                </span>
+              </div>
+              <h3 class="card-title">Органическая химия: цепочки превращений на ЕГЭ</h3>
+              <p class="card-desc">Алгоритм решения задания 32: от алканов до аминокислот за 5 шагов.</p>
+              <div class="card-author">
+                <div class="author-avatar"></div>
+                <span class="author-name">Мария Козлова</span>
+                <span class="card-dot"></span>
+                <span class="card-date">10 мар 2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">400 &times; 300</div>
+            <div class="card-body">
+              <div class="card-top-row">
+                <span class="category-badge" data-cat="chem">Химия</span>
+                <span class="read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  6 мин
+                </span>
+              </div>
+              <h3 class="card-title">Электролиз: задание 29 без ошибок</h3>
+              <p class="card-desc">Катодные и анодные процессы, последовательность разрядки ионов — наглядная схема.</p>
+              <div class="card-author">
+                <div class="author-avatar"></div>
+                <span class="author-name">Мария Козлова</span>
+                <span class="card-dot"></span>
+                <span class="card-date">6 мар 2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">400 &times; 300</div>
+            <div class="card-body">
+              <div class="card-top-row">
+                <span class="category-badge" data-cat="chem">Химия</span>
+                <span class="read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  5 мин
+                </span>
+              </div>
+              <h3 class="card-title">Таблица растворимости: как запомнить и применять</h3>
+              <p class="card-desc">Мнемонические приёмы и реальные задания, где таблица спасает баллы.</p>
+              <div class="card-author">
+                <div class="author-avatar"></div>
+                <span class="author-name">Алексей Тихонов</span>
+                <span class="card-dot"></span>
+                <span class="card-date">2 мар 2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">400 &times; 300</div>
+            <div class="card-body">
+              <div class="card-top-row">
+                <span class="category-badge" data-cat="chem">Химия</span>
+                <span class="read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  8 мин
+                </span>
+              </div>
+              <h3 class="card-title">Задачи на растворы и смеси: подробный разбор задания 34</h3>
+              <p class="card-desc">Массовая доля, молярная концентрация и типичные ловушки составителей.</p>
+              <div class="card-author">
+                <div class="author-avatar"></div>
+                <span class="author-name">Алексей Тихонов</span>
+                <span class="card-dot"></span>
+                <span class="card-date">25 фев 2026</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== РУССКИЙ ЯЗЫК ===== -->
+    <section class="category-section" id="rus">
+      <div class="container">
+        <div class="section-header">
+          <h2>Русский язык</h2>
+          <a href="#" class="section-link" data-cat="rus">Читать ещё &rarr;</a>
+        </div>
+        <div class="accent-bar" data-cat="rus"></div>
+        <div class="card-grid">
+
+          <article class="card">
+            <div class="card-image">400 &times; 300</div>
+            <div class="card-body">
+              <div class="card-top-row">
+                <span class="category-badge" data-cat="rus">Русский язык</span>
+                <span class="read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  6 мин
+                </span>
+              </div>
+              <h3 class="card-title">Сочинение ЕГЭ на максимум: структура и клише 2026</h3>
+              <p class="card-desc">Пошаговый план, речевые конструкции и примеры из реальных работ на 24 балла.</p>
+              <div class="card-author">
+                <div class="author-avatar"></div>
+                <span class="author-name">Елена Волкова</span>
+                <span class="card-dot"></span>
+                <span class="card-date">9 мар 2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">400 &times; 300</div>
+            <div class="card-body">
+              <div class="card-top-row">
+                <span class="category-badge" data-cat="rus">Русский язык</span>
+                <span class="read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  5 мин
+                </span>
+              </div>
+              <h3 class="card-title">Пунктуация: 10 правил, которые дают 8 баллов на ЕГЭ</h3>
+              <p class="card-desc">Запятые при причастных оборотах, вводных словах и сложных предложениях.</p>
+              <div class="card-author">
+                <div class="author-avatar"></div>
+                <span class="author-name">Елена Волкова</span>
+                <span class="card-dot"></span>
+                <span class="card-date">5 мар 2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">400 &times; 300</div>
+            <div class="card-body">
+              <div class="card-top-row">
+                <span class="category-badge" data-cat="rus">Русский язык</span>
+                <span class="read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  4 мин
+                </span>
+              </div>
+              <h3 class="card-title">Паронимы: полный словарик ФИПИ и способы запоминания</h3>
+              <p class="card-desc">Задание 5 ЕГЭ — разбираем все пары, которые встречаются в реальных вариантах.</p>
+              <div class="card-author">
+                <div class="author-avatar"></div>
+                <span class="author-name">Наталья Смирнова</span>
+                <span class="card-dot"></span>
+                <span class="card-date">1 мар 2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">400 &times; 300</div>
+            <div class="card-body">
+              <div class="card-top-row">
+                <span class="category-badge" data-cat="rus">Русский язык</span>
+                <span class="read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  7 мин
+                </span>
+              </div>
+              <h3 class="card-title">Средства выразительности: задание 26 без потери баллов</h3>
+              <p class="card-desc">Метафора, метонимия, оксюморон — как отличать тропы и не путать с фигурами речи.</p>
+              <div class="card-author">
+                <div class="author-avatar"></div>
+                <span class="author-name">Наталья Смирнова</span>
+                <span class="card-dot"></span>
+                <span class="card-date">24 фев 2026</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEEDBACK ===== -->
+    <section class="feedback-section" id="feedback">
+      <div class="container">
+        <h2>Обратная связь</h2>
+        <p class="subtitle">Есть вопрос или предложение? Напишите нам, и мы ответим в течение дня</p>
+        <form class="feedback-form" action="#" method="post">
+          <input type="text" placeholder="Имя" required>
+          <input type="email" placeholder="Email" required>
+          <textarea placeholder="Сообщение" required></textarea>
+          <button type="submit">Отправить</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-col">
+          <div class="footer-logo">NeoFamily. Блог</div>
+          <p class="footer-desc">Онлайн-школа подготовки к ЕГЭ<br>на 80+ баллов</p>
+        </div>
+        <div class="footer-col">
+          <h4>Разделы блога</h4>
+          <ul>
+            <li><a href="#">Актуальное</a></li>
+            <li><a href="#">ЕГЭ и поступление</a></li>
+            <li><a href="#">Биология</a></li>
+            <li><a href="#">Химия</a></li>
+            <li><a href="#">Русский язык</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Компания</h4>
+          <ul>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Преподаватели</a></li>
+            <li><a href="#">Контакты</a></li>
+            <li><a href="#">Банк заданий</a></li>
+            <li><a href="#">Магазин</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Соцсети</h4>
+          <div class="social-icons">
+            <a href="#" class="social-icon vk" aria-label="ВКонтакте">
+              <svg viewBox="0 0 24 24"><path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.587-1.496c.598-.189 1.367 1.259 2.182 1.815.616.42 1.085.328 1.085.328l2.175-.03s1.138-.07.598-.964c-.044-.073-.314-.661-1.618-1.869-1.366-1.265-1.183-1.06.462-3.248.998-1.33 1.398-2.143 1.273-2.491-.12-.332-.856-.244-.856-.244l-2.45.015s-.182-.025-.316.056c-.131.079-.215.263-.215.263s-.387 1.028-.902 1.902c-1.088 1.848-1.524 1.946-1.702 1.832-.414-.265-.31-1.066-.31-1.634 0-1.777.27-2.518-.527-2.71-.265-.064-.459-.106-1.135-.113-.867-.009-1.601.003-2.016.208-.276.136-.49.44-.36.458.16.021.523.098.715.36.249.338.24 1.096.24 1.096s.143 2.093-.334 2.352c-.327.178-.776-.185-1.74-1.848-.494-.852-.867-1.794-.867-1.794s-.072-.176-.2-.27c-.155-.114-.372-.15-.372-.15l-2.328.015s-.35.01-.478.162c-.114.135-.009.414-.009.414s1.815 4.244 3.87 6.381c1.883 1.96 4.023 1.832 4.023 1.832z"/></svg>
+            </a>
+            <a href="#" class="social-icon tg" aria-label="Telegram">
+              <svg viewBox="0 0 24 24"><path d="M9.417 15.181l-.397 5.584c.568 0 .814-.244 1.109-.537l2.663-2.545 5.518 4.041c1.012.564 1.725.267 1.998-.931L23.93 3.821l.001-.001c.321-1.496-.541-2.081-1.527-1.714l-21.29 8.151c-1.453.564-1.431 1.374-.247 1.741l5.443 1.693L18.953 5.2c.595-.394 1.136-.176.691.218z"/></svg>
+            </a>
+            <a href="#" class="social-icon yt" aria-label="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <div class="footer-bottom">
+      <div class="container">
+        <span>&copy; 2026 NeoFamily. Все права защищены.</span>
+        <a href="#">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Sticky header shadow on scroll
+    window.addEventListener('scroll', function() {
+      document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // Category tabs active state
+    document.querySelectorAll('.cat-tab').forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.cat-tab').forEach(function(t) { t.classList.remove('active'); });
+        this.classList.add('active');
+        var target = document.getElementById(this.dataset.cat);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+
+</body>
+</html>

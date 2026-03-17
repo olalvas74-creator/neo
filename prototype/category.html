@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Биология — статьи и материалы для подготовки к ЕГЭ | NeoFamily</title>
+  <meta name="description" content="Разборы заданий, теория, лайфхаки и советы по подготовке к ЕГЭ по биологии от преподавателей NeoFamily">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* === Reset & Base === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #333333;
+      background: #FFFFFF;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul, ol { list-style: none; }
+    img { max-width: 100%; height: auto; display: block; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    /* === Tokens === */
+    :root {
+      --primary: #E9585A;
+      --primary-hover: #F27C82;
+      --text-primary: #1D1E1B;
+      --text-body: #333333;
+      --text-secondary: #5C5964;
+      --text-muted: #989898;
+      --text-link: #5CA7D9;
+      --bg-white: #FFFFFF;
+      --bg-light: #F9F8FB;
+      --border-default: #DADADA;
+      --border-light: #EFEDF2;
+      --cat-actual: #FFC645;
+      --cat-ege: #6A5C90;
+      --cat-bio: #A1D236;
+      --cat-chem: #5CA7D9;
+      --cat-rus: #E9585A;
+      --dark: #1D1E1B;
+      --dark-border: #333333;
+      --dark-text: #A5A5A5;
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.04);
+      --shadow-card-hover: 0 8px 24px rgba(0,0,0,0.1);
+      --shadow-header: 0 2px 8px rgba(0,0,0,0.06);
+      --container: 1200px;
+    }
+
+    /* === Container === */
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* === Header === */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--bg-white);
+      transition: box-shadow 0.2s;
+    }
+    .header.scrolled {
+      box-shadow: var(--shadow-header);
+    }
+    .header__top {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: baseline;
+    }
+    .logo__name {
+      font-family: 'Comfortaa', cursive;
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--text-primary);
+    }
+    .logo__suffix {
+      font-family: 'Comfortaa', cursive;
+      font-weight: 400;
+      font-size: 20px;
+      color: var(--text-secondary);
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-right__link {
+      font-weight: 500;
+      font-size: 16px;
+      color: var(--text-body);
+      transition: color 0.2s;
+    }
+    .nav-right__link:hover {
+      color: var(--primary);
+    }
+    .btn-login {
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--primary);
+      border: 1.5px solid var(--primary);
+      border-radius: 12px;
+      padding: 8px 20px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-login:hover {
+      background: var(--primary);
+      color: #FFFFFF;
+    }
+    .btn-search {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .btn-search:hover {
+      background: var(--bg-light);
+    }
+    .btn-search svg {
+      width: 24px;
+      height: 24px;
+      color: var(--text-body);
+    }
+
+    /* Category Bar */
+    .category-bar {
+      background: var(--bg-light);
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .category-bar__list {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .category-tab {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.4;
+      color: var(--text-secondary);
+      padding: 8px 20px;
+      border-radius: 8px;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .category-tab:hover {
+      background: rgba(0,0,0,0.05);
+    }
+    .category-tab[data-cat="actual"]:hover { background: rgba(255,198,69,0.1); color: #b8960a; }
+    .category-tab[data-cat="ege"]:hover { background: rgba(106,92,144,0.1); color: var(--cat-ege); }
+    .category-tab[data-cat="bio"]:hover { background: rgba(161,210,54,0.1); color: #6b8e1a; }
+    .category-tab[data-cat="chem"]:hover { background: rgba(92,167,217,0.1); color: var(--cat-chem); }
+    .category-tab[data-cat="rus"]:hover { background: rgba(233,88,90,0.1); color: var(--cat-rus); }
+
+    .category-tab--active[data-cat="actual"] { background: var(--cat-actual); color: var(--text-primary); }
+    .category-tab--active[data-cat="ege"] { background: var(--cat-ege); color: #FFFFFF; }
+    .category-tab--active[data-cat="bio"] { background: var(--cat-bio); color: var(--text-primary); }
+    .category-tab--active[data-cat="chem"] { background: var(--cat-chem); color: #FFFFFF; }
+    .category-tab--active[data-cat="rus"] { background: var(--cat-rus); color: #FFFFFF; }
+
+    /* === Breadcrumbs === */
+    .breadcrumbs {
+      padding-top: 16px;
+      padding-bottom: 0;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    .breadcrumbs a {
+      color: var(--text-link);
+      transition: text-decoration 0.2s;
+    }
+    .breadcrumbs a:hover {
+      text-decoration: underline;
+    }
+    .breadcrumbs__sep {
+      color: var(--border-default);
+      padding: 0 8px;
+    }
+    .breadcrumbs__current {
+      color: var(--text-secondary);
+    }
+
+    /* === Hero Section === */
+    .hero-category {
+      padding-top: 16px;
+    }
+    .hero-category h1 {
+      font-family: 'Comfortaa', cursive;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 1.2;
+      color: var(--text-primary);
+      text-align: left;
+    }
+    .hero-category__accent {
+      width: 60px;
+      height: 4px;
+      background: var(--cat-bio);
+      border-radius: 2px;
+      margin-top: 12px;
+    }
+    .hero-category__desc {
+      margin-top: 8px;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      max-width: 720px;
+    }
+
+    /* === Filters === */
+    .filters {
+      margin-top: 24px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      overflow-x: auto;
+    }
+    .filter-btn {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.4;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1.5px solid var(--border-default);
+      color: var(--text-secondary);
+      background: transparent;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .filter-btn:hover {
+      border-color: var(--cat-bio);
+      background: rgba(161,210,54,0.08);
+      color: #6b8e1a;
+    }
+    .filter-btn--active {
+      background: var(--cat-bio);
+      color: var(--text-primary);
+      border-color: var(--cat-bio);
+    }
+    .filter-btn--active:hover {
+      background: #93c22e;
+      border-color: #93c22e;
+      color: var(--text-primary);
+    }
+
+    /* === Card Grid === */
+    .card-grid {
+      margin-top: 32px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    /* === Card === */
+    .card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+    .card__image {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);
+      overflow: hidden;
+      position: relative;
+    }
+    .card__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .card:hover .card__image img {
+      transform: scale(1.03);
+    }
+    .card__image-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      opacity: 0.3;
+    }
+    .card__content {
+      padding: 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .card__top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card__badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 4px;
+      background: rgba(161,210,54,0.15);
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 1.3;
+      color: var(--cat-bio);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .card__read-time {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+    .card__read-time svg {
+      width: 16px;
+      height: 16px;
+    }
+    .card__title {
+      margin-top: 12px;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 1.4;
+      color: var(--text-primary);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .card__desc {
+      margin-top: 8px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text-secondary);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .card__author-row {
+      margin-top: auto;
+      padding-top: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card__avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ddd 0%, #bbb 100%);
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .card__avatar-icon {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .card__author-name {
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--text-body);
+    }
+    .card__dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--border-default);
+      flex-shrink: 0;
+    }
+    .card__date {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-left: auto;
+    }
+
+    /* === Pagination === */
+    .pagination {
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+    .pagination__btn {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      border: 1px solid var(--border-default);
+      background: var(--bg-white);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--text-body);
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .pagination__btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    .pagination__btn--active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #FFFFFF;
+    }
+    .pagination__btn--active:hover {
+      background: var(--primary-hover);
+      border-color: var(--primary-hover);
+      color: #FFFFFF;
+    }
+    .pagination__dots {
+      font-size: 16px;
+      color: var(--text-secondary);
+      padding: 0 4px;
+    }
+    .pagination__btn--disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .pagination__btn--disabled:hover {
+      border-color: var(--border-default);
+      color: var(--text-body);
+    }
+    .pagination__btn svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* === See Also === */
+    .see-also {
+      margin-top: 48px;
+      background: var(--bg-light);
+      padding: 24px 0;
+    }
+    .see-also__inner {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .see-also__label {
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--text-primary);
+    }
+    .see-also__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 500;
+      font-size: 16px;
+      padding: 8px 20px;
+      border-radius: 12px;
+      transition: all 0.2s;
+    }
+    .see-also__link--chem {
+      color: var(--cat-chem);
+      background: rgba(92,167,217,0.1);
+    }
+    .see-also__link--chem:hover {
+      background: rgba(92,167,217,0.2);
+    }
+    .see-also__link--ege {
+      color: var(--cat-ege);
+      background: rgba(106,92,144,0.1);
+    }
+    .see-also__link--ege:hover {
+      background: rgba(106,92,144,0.2);
+    }
+    .see-also__link--rus {
+      color: var(--cat-rus);
+      background: rgba(233,88,90,0.1);
+    }
+    .see-also__link--rus:hover {
+      background: rgba(233,88,90,0.2);
+    }
+    .see-also__dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--border-default);
+      flex-shrink: 0;
+    }
+
+    /* === Feedback === */
+    .feedback {
+      background: var(--bg-light);
+      padding: 48px 0;
+    }
+    .feedback__inner {
+      text-align: center;
+    }
+    .feedback__title {
+      font-family: 'Comfortaa', cursive;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 1.3;
+      color: var(--text-primary);
+    }
+    .feedback__subtitle {
+      margin-top: 8px;
+      font-size: 18px;
+      color: var(--text-secondary);
+    }
+    .feedback__form {
+      margin: 32px auto 0;
+      max-width: 560px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .feedback__input,
+    .feedback__textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--border-default);
+      border-radius: 12px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 16px;
+      color: var(--text-body);
+      background: var(--bg-white);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .feedback__input::placeholder,
+    .feedback__textarea::placeholder {
+      color: var(--text-muted);
+    }
+    .feedback__input:focus,
+    .feedback__textarea:focus {
+      border-color: var(--primary);
+    }
+    .feedback__textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    .feedback__btn {
+      width: 100%;
+      padding: 14px 32px;
+      background: var(--primary);
+      color: #FFFFFF;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .feedback__btn:hover {
+      background: var(--primary-hover);
+      box-shadow: 0 4px 12px rgba(233,88,90,0.3);
+    }
+
+    /* === Footer === */
+    .footer {
+      background: var(--dark);
+      padding-top: 40px;
+    }
+    .footer__main {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr 1fr;
+      gap: 32px;
+    }
+    .footer__col-title {
+      font-weight: 600;
+      font-size: 16px;
+      color: #FFFFFF;
+      margin-bottom: 12px;
+    }
+    .footer__logo {
+      font-family: 'Comfortaa', cursive;
+      font-weight: 700;
+      font-size: 20px;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+    .footer__tagline {
+      font-size: 14px;
+      color: var(--dark-text);
+      line-height: 1.5;
+    }
+    .footer__link {
+      display: block;
+      font-size: 14px;
+      color: var(--dark-text);
+      padding: 4px 0;
+      transition: color 0.2s;
+    }
+    .footer__link:hover {
+      color: #FFFFFF;
+    }
+    .footer__social {
+      display: flex;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .footer__social-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--dark-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .footer__social-icon:hover { background: #0077FF; }
+    .footer__social-icon--tg:hover { background: #26A5E4; }
+    .footer__social-icon--yt:hover { background: #FF0000; }
+    .footer__social-icon svg {
+      width: 20px;
+      height: 20px;
+      color: #FFFFFF;
+    }
+    .footer__divider {
+      border: none;
+      border-top: 1px solid var(--dark-border);
+      margin: 32px 0 0;
+    }
+    .footer__bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+    .footer__copyright,
+    .footer__privacy {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+    .footer__privacy:hover {
+      color: #FFFFFF;
+    }
+
+    /* === Mobile burger (hidden on desktop) === */
+    .burger { display: none; }
+
+    /* === Responsive === */
+    @media (max-width: 1024px) {
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .nav-right__link { display: none; }
+      .footer__main {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      .hero-category h1 { font-size: 28px; }
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .header__top { padding: 0 16px; }
+      .nav-right { gap: 16px; }
+      .btn-login { padding: 6px 14px; font-size: 14px; }
+      .category-bar__list { gap: 4px; overflow-x: auto; padding: 0 16px; }
+      .category-tab { font-size: 14px; padding: 6px 14px; }
+      .filters { overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; padding-bottom: 4px; }
+      .feedback__title { font-size: 24px; }
+      .footer__main { grid-template-columns: 1fr; }
+      .footer__bottom { flex-direction: column; gap: 8px; text-align: center; }
+      .see-also__inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .pagination { gap: 4px; }
+      .pagination__btn { width: 38px; height: 38px; font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header__top">
+        <a href="/blog/" class="logo">
+          <span class="logo__name">NeoFamily</span>
+          <span class="logo__suffix">. Блог</span>
+        </a>
+        <nav class="nav-right">
+          <a href="/bank/" class="nav-right__link">Банк заданий</a>
+          <a href="/shop/" class="nav-right__link">Магазин</a>
+          <button class="btn-login">Войти</button>
+          <button class="btn-search" aria-label="Поиск">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </div>
+    <div class="category-bar">
+      <div class="category-bar__list">
+        <a href="/blog/aktualnoe/" class="category-tab" data-cat="actual">Актуальное</a>
+        <a href="/blog/ege-i-postuplenie/" class="category-tab" data-cat="ege">ЕГЭ и поступление</a>
+        <a href="/blog/biologiya/" class="category-tab category-tab--active" data-cat="bio">Биология</a>
+        <a href="/blog/khimiya/" class="category-tab" data-cat="chem">Химия</a>
+        <a href="/blog/russkij-yazyk/" class="category-tab" data-cat="rus">Русский язык</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== BREADCRUMBS ===== -->
+    <nav class="container breadcrumbs" aria-label="Хлебные крошки">
+      <a href="/blog/">Блог</a>
+      <span class="breadcrumbs__sep">&gt;</span>
+      <span class="breadcrumbs__current">Биология</span>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero-category">
+      <div class="container">
+        <h1>Биология — статьи и материалы для подготовки к ЕГЭ</h1>
+        <div class="hero-category__accent"></div>
+        <p class="hero-category__desc">Разборы заданий, теория, лайфхаки и советы по подготовке к ЕГЭ по биологии от преподавателей NeoFamily</p>
+
+        <!-- Filters -->
+        <div class="filters" role="group" aria-label="Фильтры по темам">
+          <button class="filter-btn filter-btn--active">Все</button>
+          <button class="filter-btn">Клеточная биология</button>
+          <button class="filter-btn">Генетика</button>
+          <button class="filter-btn">Анатомия</button>
+          <button class="filter-btn">Зоология</button>
+          <button class="filter-btn">Ботаника</button>
+          <button class="filter-btn">Экология</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CARD GRID ===== -->
+    <section class="container" aria-label="Статьи по биологии">
+      <div class="card-grid">
+
+        <!-- Card 1 -->
+        <article class="card">
+          <a href="/blog/biologiya/stroenie-kletki/" class="card__image">
+            <div class="card__image-placeholder" style="background: linear-gradient(135deg, #c5e1a5, #aed581);">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#7cb342" stroke-width="1" opacity="0.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="22"/></svg>
+            </div>
+          </a>
+          <div class="card__content">
+            <div class="card__top-row">
+              <span class="card__badge">Биология</span>
+              <span class="card__read-time">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                7 мин
+              </span>
+            </div>
+            <h3 class="card__title"><a href="/blog/biologiya/stroenie-kletki/">Строение клетки: полный разбор для ЕГЭ</a></h3>
+            <p class="card__desc">Подробный разбор строения эукариотической и прокариотической клетки, все органоиды и их функции</p>
+            <div class="card__author-row">
+              <div class="card__avatar"><div class="card__avatar-icon">ИП</div></div>
+              <span class="card__author-name">Иван Петров</span>
+              <span class="card__dot"></span>
+              <span class="card__date">12 мар 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <a href="#" class="card__image">
+            <div class="card__image-placeholder" style="background: linear-gradient(135deg, #dcedc8, #c5e1a5);">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#7cb342" stroke-width="1" opacity="0.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg>
+            </div>
+          </a>
+          <div class="card__content">
+            <div class="card__top-row">
+              <span class="card__badge">Биология</span>
+              <span class="card__read-time">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                10 мин
+              </span>
+            </div>
+            <h3 class="card__title"><a href="#">Генетика: как решать задачи на скрещивание</a></h3>
+            <p class="card__desc">Пошаговый алгоритм решения генетических задач, законы Менделя, дигибридное и моногибридное скрещивание</p>
+            <div class="card__author-row">
+              <div class="card__avatar"><div class="card__avatar-icon">АС</div></div>
+              <span class="card__author-name">Анна Сидорова</span>
+              <span class="card__dot"></span>
+              <span class="card__date">10 мар 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <a href="#" class="card__image">
+            <div class="card__image-placeholder" style="background: linear-gradient(135deg, #e6ee9c, #dce775);">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#9e9d24" stroke-width="1" opacity="0.5"><circle cx="8" cy="12" r="5"/><circle cx="16" cy="12" r="5"/></svg>
+            </div>
+          </a>
+          <div class="card__content">
+            <div class="card__top-row">
+              <span class="card__badge">Биология</span>
+              <span class="card__read-time">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                8 мин
+              </span>
+            </div>
+            <h3 class="card__title"><a href="#">Митоз и мейоз: отличия, которые нужно знать</a></h3>
+            <p class="card__desc">Сравнительная таблица, фазы деления, биологическое значение и типичные ошибки на ЕГЭ</p>
+            <div class="card__author-row">
+              <div class="card__avatar"><div class="card__avatar-icon">ИП</div></div>
+              <span class="card__author-name">Иван Петров</span>
+              <span class="card__dot"></span>
+              <span class="card__date">8 мар 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card">
+          <a href="#" class="card__image">
+            <div class="card__image-placeholder" style="background: linear-gradient(135deg, #a5d6a7, #81c784);">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#388e3c" stroke-width="1" opacity="0.5"><path d="M12 2L2 19h20L12 2z"/><circle cx="12" cy="14" r="2"/></svg>
+            </div>
+          </a>
+          <div class="card__content">
+            <div class="card__top-row">
+              <span class="card__badge">Биология</span>
+              <span class="card__read-time">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                6 мин
+              </span>
+            </div>
+            <h3 class="card__title"><a href="#">Фотосинтез: всё что нужно для ЕГЭ 2026</a></h3>
+            <p class="card__desc">Световая и темновая фазы, хемосинтез, значение фотосинтеза в природе и задания из ЕГЭ</p>
+            <div class="card__author-row">
+              <div class="card__avatar"><div class="card__avatar-icon">МК</div></div>
+              <span class="card__author-name">Мария Козлова</span>
+              <span class="card__dot"></span>
+              <span class="card__date">5 мар 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="card">
+          <a href="#" class="card__image">
+            <div class="card__image-placeholder" style="background: linear-gradient(135deg, #ef9a9a, #e57373);">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="1" opacity="0.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+          </a>
+          <div class="card__content">
+            <div class="card__top-row">
+              <span class="card__badge">Биология</span>
+              <span class="card__read-time">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                9 мин
+              </span>
+            </div>
+            <h3 class="card__title"><a href="#">Кровеносная система человека: теория и задания</a></h3>
+            <p class="card__desc">Большой и малый круги кровообращения, строение сердца, типы сосудов и форменные элементы крови</p>
+            <div class="card__author-row">
+              <div class="card__avatar"><div class="card__avatar-icon">АС</div></div>
+              <span class="card__author-name">Анна Сидорова</span>
+              <span class="card__dot"></span>
+              <span class="card__date">3 мар 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="card">
+          <a href="#" class="card__image">
+            <div class="card__image-placeholder" style="background: linear-gradient(135deg, #c8e6c9, #a5d6a7);">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="1" opacity="0.5"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+            </div>
+          </a>
+          <div class="card__content">
+            <div class="card__top-row">
+              <span class="card__badge">Биология</span>
+              <span class="card__read-time">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                11 мин
+              </span>
+            </div>
+            <h3 class="card__title"><a href="#">Экосистемы: структура, цепи питания, сукцессия</a></h3>
+            <p class="card__desc">Биогеоценоз, трофические уровни, экологические пирамиды и правила 10 процентов</p>
+            <div class="card__author-row">
+              <div class="card__avatar"><div class="card__avatar-icon">ИП</div></div>
+              <span class="card__author-name">Иван Петров</span>
+              <span class="card__dot"></span>
+              <span class="card__date">1 мар 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 7 -->
+        <article class="card">
+          <a href="#" class="card__image">
+            <div class="card__image-placeholder" style="background: linear-gradient(135deg, #b3e5fc, #81d4fa);">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#0277bd" stroke-width="1" opacity="0.5"><path d="M22 12h-4l-3 9L11 3 8 12H2"/></svg>
+            </div>
+          </a>
+          <div class="card__content">
+            <div class="card__top-row">
+              <span class="card__badge">Биология</span>
+              <span class="card__read-time">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                8 мин
+              </span>
+            </div>
+            <h3 class="card__title"><a href="#">Нервная система: строение и функции</a></h3>
+            <p class="card__desc">Центральная и периферическая нервная система, рефлекторная дуга, синапс и нейромедиаторы</p>
+            <div class="card__author-row">
+              <div class="card__avatar"><div class="card__avatar-icon">МК</div></div>
+              <span class="card__author-name">Мария Козлова</span>
+              <span class="card__dot"></span>
+              <span class="card__date">27 фев 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 8 -->
+        <article class="card">
+          <a href="#" class="card__image">
+            <div class="card__image-placeholder" style="background: linear-gradient(135deg, #fff9c4, #fff176);">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f9a825" stroke-width="1" opacity="0.5"><path d="M12 2a7 7 0 017 7c0 3-2 5-3 7h-8c-1-2-3-4-3-7a7 7 0 017-7z"/><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="21" x2="14" y2="21"/></svg>
+            </div>
+          </a>
+          <div class="card__content">
+            <div class="card__top-row">
+              <span class="card__badge">Биология</span>
+              <span class="card__read-time">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                12 мин
+              </span>
+            </div>
+            <h3 class="card__title"><a href="#">Эволюция: от Дарвина до современной теории</a></h3>
+            <p class="card__desc">Движущие силы эволюции, естественный отбор, дрейф генов, видообразование и макроэволюция</p>
+            <div class="card__author-row">
+              <div class="card__avatar"><div class="card__avatar-icon">ИП</div></div>
+              <span class="card__author-name">Иван Петров</span>
+              <span class="card__dot"></span>
+              <span class="card__date">24 фев 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 9 -->
+        <article class="card">
+          <a href="#" class="card__image">
+            <div class="card__image-placeholder" style="background: linear-gradient(135deg, #d1c4e9, #b39ddb);">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#512da8" stroke-width="1" opacity="0.5"><path d="M4 4h16v16H4z"/><path d="M9 9h6v6H9z"/></svg>
+            </div>
+          </a>
+          <div class="card__content">
+            <div class="card__top-row">
+              <span class="card__badge">Биология</span>
+              <span class="card__read-time">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                6 мин
+              </span>
+            </div>
+            <h3 class="card__title"><a href="#">ДНК и РНК: строение, репликация, транскрипция</a></h3>
+            <p class="card__desc">Нуклеотиды, комплементарность, виды РНК и все этапы биосинтеза белка для ЕГЭ</p>
+            <div class="card__author-row">
+              <div class="card__avatar"><div class="card__avatar-icon">АС</div></div>
+              <span class="card__author-name">Анна Сидорова</span>
+              <span class="card__dot"></span>
+              <span class="card__date">21 фев 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 10 -->
+        <article class="card">
+          <a href="#" class="card__image">
+            <div class="card__image-placeholder" style="background: linear-gradient(135deg, #b2dfdb, #80cbc4);">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#00695c" stroke-width="1" opacity="0.5"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75"/></svg>
+            </div>
+          </a>
+          <div class="card__content">
+            <div class="card__top-row">
+              <span class="card__badge">Биология</span>
+              <span class="card__read-time">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                5 мин
+              </span>
+            </div>
+            <h3 class="card__title"><a href="#">Ботаника: ткани и органы растений</a></h3>
+            <p class="card__desc">Образовательные, покровные, проводящие ткани, корень, стебель, лист — всё для задания линии 2</p>
+            <div class="card__author-row">
+              <div class="card__avatar"><div class="card__avatar-icon">МК</div></div>
+              <span class="card__author-name">Мария Козлова</span>
+              <span class="card__dot"></span>
+              <span class="card__date">18 фев 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 11 -->
+        <article class="card">
+          <a href="#" class="card__image">
+            <div class="card__image-placeholder" style="background: linear-gradient(135deg, #ffccbc, #ffab91);">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#bf360c" stroke-width="1" opacity="0.5"><circle cx="12" cy="8" r="5"/><path d="M3 21v-2a7 7 0 0114 0v2"/></svg>
+            </div>
+          </a>
+          <div class="card__content">
+            <div class="card__top-row">
+              <span class="card__badge">Биология</span>
+              <span class="card__read-time">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                9 мин
+              </span>
+            </div>
+            <h3 class="card__title"><a href="#">Опорно-двигательная система: кости, мышцы, суставы</a></h3>
+            <p class="card__desc">Типы костей, строение скелета, механизм мышечного сокращения и частые ошибки на экзамене</p>
+            <div class="card__author-row">
+              <div class="card__avatar"><div class="card__avatar-icon">ИП</div></div>
+              <span class="card__author-name">Иван Петров</span>
+              <span class="card__dot"></span>
+              <span class="card__date">15 фев 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 12 -->
+        <article class="card">
+          <a href="#" class="card__image">
+            <div class="card__image-placeholder" style="background: linear-gradient(135deg, #f0f4c3, #e6ee9c);">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#827717" stroke-width="1" opacity="0.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+          </a>
+          <div class="card__content">
+            <div class="card__top-row">
+              <span class="card__badge">Биология</span>
+              <span class="card__read-time">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                7 мин
+              </span>
+            </div>
+            <h3 class="card__title"><a href="#">Иммунитет: врождённый и приобретённый</a></h3>
+            <p class="card__desc">Клеточный и гуморальный иммунитет, вакцинация, группы крови и резус-фактор</p>
+            <div class="card__author-row">
+              <div class="card__avatar"><div class="card__avatar-icon">АС</div></div>
+              <span class="card__author-name">Анна Сидорова</span>
+              <span class="card__dot"></span>
+              <span class="card__date">12 фев 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 13 -->
+        <article class="card">
+          <a href="#" class="card__image">
+            <div class="card__image-placeholder" style="background: linear-gradient(135deg, #b2ebf2, #80deea);">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#006064" stroke-width="1" opacity="0.5"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
+            </div>
+          </a>
+          <div class="card__content">
+            <div class="card__top-row">
+              <span class="card__badge">Биология</span>
+              <span class="card__read-time">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                10 мин
+              </span>
+            </div>
+            <h3 class="card__title"><a href="#">Обмен веществ: энергетический и пластический</a></h3>
+            <p class="card__desc">АТФ, гликолиз, цикл Кребса, окислительное фосфорилирование — полный разбор метаболизма</p>
+            <div class="card__author-row">
+              <div class="card__avatar"><div class="card__avatar-icon">МК</div></div>
+              <span class="card__author-name">Мария Козлова</span>
+              <span class="card__dot"></span>
+              <span class="card__date">9 фев 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 14 -->
+        <article class="card">
+          <a href="#" class="card__image">
+            <div class="card__image-placeholder" style="background: linear-gradient(135deg, #ffe0b2, #ffcc80);">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#e65100" stroke-width="1" opacity="0.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+          </a>
+          <div class="card__content">
+            <div class="card__top-row">
+              <span class="card__badge">Биология</span>
+              <span class="card__read-time">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                8 мин
+              </span>
+            </div>
+            <h3 class="card__title"><a href="#">Зоология беспозвоночных: от простейших до членистоногих</a></h3>
+            <p class="card__desc">Систематика, ароморфозы, жизненные циклы паразитов и задания линии 8 ЕГЭ</p>
+            <div class="card__author-row">
+              <div class="card__avatar"><div class="card__avatar-icon">ИП</div></div>
+              <span class="card__author-name">Иван Петров</span>
+              <span class="card__dot"></span>
+              <span class="card__date">6 фев 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 15 -->
+        <article class="card">
+          <a href="#" class="card__image">
+            <div class="card__image-placeholder" style="background: linear-gradient(135deg, #c5cae9, #9fa8da);">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#283593" stroke-width="1" opacity="0.5"><path d="M9 19V6l12-3v13M9 19c0 1.1-1.3 2-3 2s-3-.9-3-2 1.3-2 3-2 3 .9 3 2zm12-3c0 1.1-1.3 2-3 2s-3-.9-3-2 1.3-2 3-2 3 .9 3 2z"/></svg>
+            </div>
+          </a>
+          <div class="card__content">
+            <div class="card__top-row">
+              <span class="card__badge">Биология</span>
+              <span class="card__read-time">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                6 мин
+              </span>
+            </div>
+            <h3 class="card__title"><a href="#">Эндокринная система: гормоны и железы</a></h3>
+            <p class="card__desc">Гипофиз, щитовидная железа, надпочечники — таблица гормонов и их функций для ЕГЭ</p>
+            <div class="card__author-row">
+              <div class="card__avatar"><div class="card__avatar-icon">АС</div></div>
+              <span class="card__author-name">Анна Сидорова</span>
+              <span class="card__dot"></span>
+              <span class="card__date">3 фев 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 16 -->
+        <article class="card">
+          <a href="#" class="card__image">
+            <div class="card__image-placeholder" style="background: linear-gradient(135deg, #dcedc8, #aed581);">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#558b2f" stroke-width="1" opacity="0.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+            </div>
+          </a>
+          <div class="card__content">
+            <div class="card__top-row">
+              <span class="card__badge">Биология</span>
+              <span class="card__read-time">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                7 мин
+              </span>
+            </div>
+            <h3 class="card__title"><a href="#">Селекция и биотехнология: методы и достижения</a></h3>
+            <p class="card__desc">Искусственный отбор, гибридизация, полиплоидия, генная инженерия и клонирование</p>
+            <div class="card__author-row">
+              <div class="card__avatar"><div class="card__avatar-icon">МК</div></div>
+              <span class="card__author-name">Мария Козлова</span>
+              <span class="card__dot"></span>
+              <span class="card__date">1 фев 2026</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- ===== PAGINATION ===== -->
+      <nav class="pagination" aria-label="Пагинация">
+        <button class="pagination__btn pagination__btn--disabled" aria-label="Предыдущая страница" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="pagination__btn pagination__btn--active" aria-label="Страница 1">1</button>
+        <button class="pagination__btn" aria-current="page" aria-label="Страница 2">2</button>
+        <button class="pagination__btn" aria-label="Страница 3">3</button>
+        <button class="pagination__btn" aria-label="Страница 4">4</button>
+        <button class="pagination__btn" aria-label="Страница 5">5</button>
+        <span class="pagination__dots">...</span>
+        <button class="pagination__btn" aria-label="Страница 12">12</button>
+        <button class="pagination__btn" aria-label="Следующая страница">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </nav>
+    </section>
+
+    <!-- ===== SEE ALSO ===== -->
+    <section class="see-also" aria-label="Смотрите также">
+      <div class="container">
+        <div class="see-also__inner">
+          <span class="see-also__label">Смотрите также:</span>
+          <a href="/blog/khimiya/" class="see-also__link see-also__link--chem">
+            <span style="width:8px;height:8px;border-radius:50%;background:var(--cat-chem);flex-shrink:0;"></span>
+            Химия
+          </a>
+          <span class="see-also__dot"></span>
+          <a href="/blog/ege-i-postuplenie/" class="see-also__link see-also__link--ege">
+            <span style="width:8px;height:8px;border-radius:50%;background:var(--cat-ege);flex-shrink:0;"></span>
+            ЕГЭ и поступление
+          </a>
+          <span class="see-also__dot"></span>
+          <a href="/blog/russkij-yazyk/" class="see-also__link see-also__link--rus">
+            <span style="width:8px;height:8px;border-radius:50%;background:var(--cat-rus);flex-shrink:0;"></span>
+            Русский язык
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEEDBACK ===== -->
+    <section class="feedback" aria-label="Обратная связь">
+      <div class="container">
+        <div class="feedback__inner">
+          <h2 class="feedback__title">Остались вопросы?</h2>
+          <p class="feedback__subtitle">Напиши нам, и мы поможем разобраться</p>
+          <form class="feedback__form" action="#" method="post">
+            <input class="feedback__input" type="text" name="name" placeholder="Имя" required>
+            <input class="feedback__input" type="email" name="email" placeholder="Email" required>
+            <textarea class="feedback__textarea" name="message" placeholder="Твой вопрос или предложение..." required></textarea>
+            <button class="feedback__btn" type="submit">Отправить</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__main">
+        <div>
+          <div class="footer__logo">NeoFamily. Блог</div>
+          <p class="footer__tagline">Онлайн-школа подготовки к ЕГЭ<br>на 80+ баллов</p>
+        </div>
+        <div>
+          <div class="footer__col-title">Разделы блога</div>
+          <a href="/blog/aktualnoe/" class="footer__link">Актуальное</a>
+          <a href="/blog/ege-i-postuplenie/" class="footer__link">ЕГЭ и поступление</a>
+          <a href="/blog/biologiya/" class="footer__link">Биология</a>
+          <a href="/blog/khimiya/" class="footer__link">Химия</a>
+          <a href="/blog/russkij-yazyk/" class="footer__link">Русский язык</a>
+        </div>
+        <div>
+          <div class="footer__col-title">Компания</div>
+          <a href="/about/" class="footer__link">О нас</a>
+          <a href="/teachers/" class="footer__link">Преподаватели</a>
+          <a href="/reviews/" class="footer__link">Отзывы</a>
+          <a href="/contacts/" class="footer__link">Контакты</a>
+          <a href="/shop/" class="footer__link">Магазин</a>
+        </div>
+        <div>
+          <div class="footer__col-title">Соцсети</div>
+          <div class="footer__social">
+            <a href="#" class="footer__social-icon" aria-label="ВКонтакте">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.587-1.496c.598-.188 1.368 1.259 2.183 1.815.616.42 1.084.328 1.084.328l2.175-.03s1.14-.07.599-.964c-.044-.073-.314-.661-1.618-1.869-1.366-1.265-1.183-1.06.462-3.248.862-1.15 1.37-2.027 1.243-2.356-.12-.306-.86-.225-.86-.225l-2.446.015s-.181-.025-.316.056c-.131.079-.216.264-.216.264s-.388 1.033-.905 1.912c-1.09 1.854-1.527 1.953-1.705 1.838-.415-.268-.311-1.076-.311-1.649 0-1.793.271-2.54-.529-2.734-.266-.064-.461-.107-1.14-.114-.872-.009-1.608.003-2.025.207-.277.136-.491.439-.361.456.16.022.524.098.717.36.248.339.24 1.098.24 1.098s.143 2.11-.333 2.371c-.327.18-.775-.187-1.736-1.865-.492-.859-.864-1.81-.864-1.81s-.072-.176-.2-.271c-.155-.115-.372-.151-.372-.151l-2.323.015s-.349.01-.477.161c-.114.135-.009.413-.009.413s1.825 4.274 3.892 6.426c1.895 1.973 4.047 1.843 4.047 1.843h.975z"/></svg>
+            </a>
+            <a href="#" class="footer__social-icon footer__social-icon--tg" aria-label="Telegram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 1 0 24 12.056A12.014 12.014 0 0 0 11.944 0Zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472c-.18 1.898-.962 6.502-1.36 8.627c-.168.9-.499 1.201-.82 1.23c-.696.065-1.225-.46-1.9-.902c-1.056-.693-1.653-1.124-2.678-1.8c-1.185-.78-.417-1.21.258-1.91c.177-.184 3.247-2.977 3.307-3.23c.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345c-.48.33-.913.49-1.302.48c-.428-.008-1.252-.241-1.865-.44c-.752-.245-1.349-.374-1.297-.789c.027-.216.325-.437.893-.663c3.498-1.524 5.83-2.529 6.998-3.014c3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            </a>
+            <a href="#" class="footer__social-icon footer__social-icon--yt" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <hr class="footer__divider">
+      <div class="footer__bottom">
+        <span class="footer__copyright">&copy; 2026 NeoFamily. Все права защищены.</span>
+        <a href="/privacy/" class="footer__privacy">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll shadow
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // Filter buttons toggle
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('filter-btn--active'));
+        btn.classList.add('filter-btn--active');
+      });
+    });
+
+    // Pagination active toggle
+    const pageBtns = document.querySelectorAll('.pagination__btn:not(.pagination__btn--disabled)');
+    pageBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        pageBtns.forEach(b => b.classList.remove('pagination__btn--active'));
+        btn.classList.add('pagination__btn--active');
+      });
+    });
+  </script>
+
+</body>
+</html>
