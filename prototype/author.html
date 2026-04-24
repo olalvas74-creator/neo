@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Иван Петров — преподаватель биологии | NeoFamily. Блог</title>
+  <meta name="description" content="Иван Петров — кандидат биологических наук, преподаватель биологии с 12-летним опытом подготовки к ЕГЭ. Эксперт ФИПИ, автор методических пособий.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ==========================================================================
+       Author page — специфичные стили
+       ========================================================================== */
+
+    /* === Author Hero === */
+    .author-hero {
+      padding: 32px 0 48px;
+    }
+
+    .author-hero__inner {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    .author-hero__photo {
+      width: 240px;
+      height: 240px;
+      border-radius: 32px;
+      background: linear-gradient(135deg, #c5e1a5 0%, #81c784 50%, #66bb6a 100%);
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: var(--shadow-md);
+    }
+
+    .author-hero__photo-initials {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 72px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: 2px;
+    }
+
+    .author-hero__body {
+      padding-top: 8px;
+    }
+
+    .author-hero__role-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: rgba(161, 210, 54, 0.15);
+      color: #6b8e1a;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .author-hero__role-tag svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .author-hero h1 {
+      font-family: var(--font-heading);
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--text-heading);
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .author-hero__accent {
+      width: 60px;
+      height: 4px;
+      background: var(--cat-bio);
+      border-radius: 2px;
+      margin-bottom: 16px;
+    }
+
+    .author-hero__position {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-body);
+      margin-bottom: 6px;
+    }
+
+    .author-hero__experience {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .author-hero__bio {
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--text-body);
+      margin-bottom: 24px;
+      max-width: 720px;
+    }
+
+    .author-hero__bio p + p {
+      margin-top: 14px;
+    }
+
+    /* === Stats (мини-статистика) === */
+    .author-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 180px));
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .author-stat {
+      padding: 18px 20px;
+      background: var(--bg-light);
+      border-radius: 16px;
+      border-left: 4px solid var(--cat-bio);
+    }
+
+    .author-stat__value {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-heading);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .author-stat__label {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.3;
+    }
+
+    /* === Socials === */
+    .author-socials {
+      display: flex;
+      gap: 10px;
+    }
+
+    .author-social {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1.5px solid var(--border);
+      background: var(--bg-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .author-social svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .author-social:hover { color: #FFFFFF; }
+    .author-social.vk:hover { background: #0077FF; border-color: #0077FF; }
+    .author-social.tg:hover { background: #26A5E4; border-color: #26A5E4; }
+    .author-social.yt:hover { background: #FF0000; border-color: #FF0000; }
+    .author-social.mail:hover { background: var(--primary); border-color: var(--primary); }
+
+    /* === Секции === */
+    .author-section {
+      padding: 48px 0;
+    }
+
+    .author-section--alt {
+      background: var(--bg-light);
+    }
+
+    .author-section__head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 28px;
+      gap: 24px;
+    }
+
+    .author-section__title {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-heading);
+    }
+
+    .author-section__link {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--cat-bio);
+      transition: opacity 0.2s ease;
+    }
+
+    .author-section__link:hover {
+      opacity: 0.75;
+    }
+
+    /* === Certificates grid === */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .cert-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .cert-card__preview {
+      aspect-ratio: 4 / 3;
+      background: linear-gradient(135deg, #f5f5ef 0%, #e8e4d8 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cert-card__preview::before {
+      content: '';
+      position: absolute;
+      inset: 16px;
+      border: 2px solid rgba(161, 210, 54, 0.35);
+      border-radius: 8px;
+      pointer-events: none;
+    }
+
+    .cert-card__preview svg {
+      width: 52px;
+      height: 52px;
+      color: var(--cat-bio);
+      opacity: 0.85;
+    }
+
+    .cert-card__preview--ege { background: linear-gradient(135deg, #f3f1fa 0%, #ddd6f0 100%); }
+    .cert-card__preview--ege::before { border-color: rgba(106, 92, 144, 0.35); }
+    .cert-card__preview--ege svg { color: var(--cat-ege); }
+
+    .cert-card__preview--diploma { background: linear-gradient(135deg, #fff8e8 0%, #ffe7aa 100%); }
+    .cert-card__preview--diploma::before { border-color: rgba(255, 198, 69, 0.5); }
+    .cert-card__preview--diploma svg { color: #b8960a; }
+
+    .cert-card__preview--award { background: linear-gradient(135deg, #fde9ea 0%, #f9b6b9 100%); }
+    .cert-card__preview--award::before { border-color: rgba(233, 88, 90, 0.35); }
+    .cert-card__preview--award svg { color: var(--cat-rus); }
+
+    .cert-card__preview--course { background: linear-gradient(135deg, #e8f4fb 0%, #b7dcef 100%); }
+    .cert-card__preview--course::before { border-color: rgba(92, 167, 217, 0.4); }
+    .cert-card__preview--course svg { color: var(--cat-chem); }
+
+    .cert-card__body {
+      padding: 18px 20px 22px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .cert-card__year {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--cat-bio);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .cert-card__title {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-heading);
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+
+    .cert-card__issuer {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+      margin-top: auto;
+    }
+
+    /* === Articles grid (4 последних) === */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    /* === CTA Banner === */
+    .author-cta {
+      margin: 0;
+      padding: 48px 0;
+    }
+
+    .author-cta__banner {
+      background: linear-gradient(135deg, #A1D236 0%, #7cb342 100%);
+      border-radius: 32px;
+      padding: 48px;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .author-cta__text h3 {
+      font-family: var(--font-heading);
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #1D1E1B;
+    }
+
+    .author-cta__text p {
+      font-size: 17px;
+      opacity: 0.9;
+      color: #1D1E1B;
+      max-width: 560px;
+    }
+
+    .author-cta__btn {
+      display: inline-block;
+      background: var(--text-heading);
+      color: #FFFFFF;
+      padding: 16px 32px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 17px;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .author-cta__btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+
+    /* === Responsive === */
+    @media (max-width: 1024px) {
+      .author-hero__inner {
+        grid-template-columns: 200px 1fr;
+        gap: 32px;
+      }
+      .author-hero__photo {
+        width: 200px;
+        height: 200px;
+      }
+      .author-hero__photo-initials { font-size: 60px; }
+      .author-hero h1 { font-size: 34px; }
+      .cert-grid { grid-template-columns: repeat(2, 1fr); }
+      .articles-grid { grid-template-columns: repeat(2, 1fr); }
+      .author-stats { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .author-hero__inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        justify-items: center;
+        text-align: center;
+      }
+      .author-hero__photo { width: 160px; height: 160px; }
+      .author-hero__photo-initials { font-size: 48px; }
+      .author-hero h1 { font-size: 28px; }
+      .author-hero__accent { margin-left: auto; margin-right: auto; }
+      .author-hero__bio { text-align: left; }
+      .author-stats {
+        grid-template-columns: 1fr;
+        width: 100%;
+      }
+      .author-socials { justify-content: center; }
+      .cert-grid { grid-template-columns: 1fr; }
+      .articles-grid { grid-template-columns: 1fr; }
+      .author-section__head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .author-cta__banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 32px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header__top">
+        <a href="/blog/" class="logo">
+          <span class="logo__name">NeoFamily</span>
+          <span class="logo__suffix">. Блог</span>
+        </a>
+        <nav class="nav-right">
+          <a href="/bank/" class="nav-right__link">Банк заданий</a>
+          <a href="/shop/" class="nav-right__link">Магазин</a>
+          <button class="btn-login">Войти</button>
+          <button class="btn-search" aria-label="Поиск">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </div>
+    <div class="category-bar">
+      <div class="container">
+        <div class="category-bar__list">
+          <a href="/blog/aktualnoe/" class="category-tab" data-cat="actual">Актуальное</a>
+          <a href="/blog/ege-i-postuplenie/" class="category-tab" data-cat="ege">ЕГЭ и поступление</a>
+          <a href="/blog/biologiya/" class="category-tab" data-cat="bio">Биология</a>
+          <a href="/blog/khimiya/" class="category-tab" data-cat="chem">Химия</a>
+          <a href="/blog/russkij-yazyk/" class="category-tab" data-cat="rus">Русский язык</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== BREADCRUMBS ===== -->
+    <nav class="container breadcrumbs" aria-label="Хлебные крошки">
+      <a href="/blog/">Блог</a>
+      <span class="breadcrumbs__sep">&gt;</span>
+      <a href="/blog/authors/">Авторы</a>
+      <span class="breadcrumbs__sep">&gt;</span>
+      <span class="breadcrumbs__current">Иван Петров</span>
+    </nav>
+
+    <!-- ===== AUTHOR HERO ===== -->
+    <section class="author-hero">
+      <div class="container">
+        <div class="author-hero__inner">
+
+          <!-- Photo -->
+          <div class="author-hero__photo">
+            <div class="author-hero__photo-initials">ИП</div>
+          </div>
+
+          <!-- Body -->
+          <div class="author-hero__body">
+            <div class="author-hero__role-tag">
+              <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+              </svg>
+              Проверенный эксперт
+            </div>
+
+            <h1>Иван Петров</h1>
+            <div class="author-hero__accent"></div>
+
+            <div class="author-hero__position">Преподаватель биологии, к.б.н.</div>
+            <div class="author-hero__experience">Эксперт ЕГЭ ФИПИ · 12 лет опыта подготовки выпускников</div>
+
+            <div class="author-hero__bio">
+              <p>Кандидат биологических наук, выпускник биологического факультета МГУ им. М.В. Ломоносова. Более 12 лет готовит выпускников к ЕГЭ и олимпиадам по биологии в онлайн-школе NeoFamily. Специализируется на цитологии, генетике и молекулярной биологии.</p>
+              <p>Автор методических пособий и онлайн-курсов по подготовке к ЕГЭ. Эксперт предметной комиссии ФИПИ с 2018 года. Средний балл учеников — 89 из 100, более 140 выпускников набрали 90+ баллов за последние пять лет.</p>
+            </div>
+
+            <!-- Stats -->
+            <div class="author-stats">
+              <div class="author-stat">
+                <div class="author-stat__value">12 лет</div>
+                <div class="author-stat__label">опыта преподавания</div>
+              </div>
+              <div class="author-stat">
+                <div class="author-stat__value">89</div>
+                <div class="author-stat__label">средний балл учеников</div>
+              </div>
+              <div class="author-stat">
+                <div class="author-stat__value">47</div>
+                <div class="author-stat__label">статей в блоге</div>
+              </div>
+            </div>
+
+            <!-- Socials -->
+            <div class="author-socials" aria-label="Соцсети автора">
+              <a href="#" class="author-social vk" aria-label="ВКонтакте">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.587-1.496c.598-.188 1.368 1.259 2.183 1.815.616.42 1.084.328 1.084.328l2.175-.03s1.14-.07.6-.964c-.045-.073-.32-.662-1.644-1.872-1.386-1.268-1.2-1.063.468-3.256.717-.943 1.236-1.52 1.13-1.766-.1-.235-.73-.173-.73-.173l-2.45.015s-.182-.025-.316.056c-.132.079-.217.263-.217.263s-.39 1.038-.91 1.92c-1.098 1.867-1.537 1.965-1.717 1.849-.419-.271-.314-1.088-.314-1.668 0-1.812.275-2.568-.534-2.764-.27-.065-.467-.108-1.154-.115-.88-.009-1.624.003-2.046.209-.28.137-.497.442-.365.46.163.021.532.1.728.364.253.341.244 1.107.244 1.107s.145 2.133-.34 2.397c-.333.182-.789-.189-1.768-1.886-.502-.87-.882-1.833-.882-1.833s-.073-.18-.204-.276c-.158-.117-.38-.154-.38-.154l-2.327.015s-.35.01-.478.162c-.114.135-.009.414-.009.414s1.838 4.3 3.92 6.467c1.91 1.988 4.078 1.857 4.078 1.857h.983z"/></svg>
+              </a>
+              <a href="#" class="author-social tg" aria-label="Telegram">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.492-1.302.48-.428-.013-1.252-.242-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              </a>
+              <a href="#" class="author-social yt" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
+              <a href="mailto:petrov@neofamily.ru" class="author-social mail" aria-label="Написать на почту">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CERTIFICATES ===== -->
+    <section class="author-section author-section--alt" aria-label="Сертификаты и регалии">
+      <div class="container">
+        <div class="author-section__head">
+          <h2 class="author-section__title">Сертификаты и регалии</h2>
+        </div>
+
+        <div class="cert-grid">
+
+          <!-- Cert 1 — диплом о кандидатской -->
+          <article class="cert-card">
+            <div class="cert-card__preview cert-card__preview--diploma">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+            </div>
+            <div class="cert-card__body">
+              <div class="cert-card__year">2013</div>
+              <div class="cert-card__title">Диплом кандидата биологических наук</div>
+              <div class="cert-card__issuer">МГУ им. М.В. Ломоносова, биологический факультет. Специальность «Генетика»</div>
+            </div>
+          </article>
+
+          <!-- Cert 2 — эксперт ФИПИ -->
+          <article class="cert-card">
+            <div class="cert-card__preview cert-card__preview--ege">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <path d="M9 15l2 2 4-4"/>
+              </svg>
+            </div>
+            <div class="cert-card__body">
+              <div class="cert-card__year">2018 — н.в.</div>
+              <div class="cert-card__title">Эксперт предметной комиссии ЕГЭ по биологии</div>
+              <div class="cert-card__issuer">Федеральный институт педагогических измерений (ФИПИ)</div>
+            </div>
+          </article>
+
+          <!-- Cert 3 — автор пособий -->
+          <article class="cert-card">
+            <div class="cert-card__preview">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+              </svg>
+            </div>
+            <div class="cert-card__body">
+              <div class="cert-card__year">2020</div>
+              <div class="cert-card__title">Автор методического пособия по цитологии</div>
+              <div class="cert-card__issuer">Издательство «Национальное образование», серия «Подготовка к ЕГЭ»</div>
+            </div>
+          </article>
+
+          <!-- Cert 4 — курс повышения -->
+          <article class="cert-card">
+            <div class="cert-card__preview cert-card__preview--course">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="7"/>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+              </svg>
+            </div>
+            <div class="cert-card__body">
+              <div class="cert-card__year">2022</div>
+              <div class="cert-card__title">Повышение квалификации «Современные методы преподавания биологии»</div>
+              <div class="cert-card__issuer">Московский государственный педагогический университет, 144 часа</div>
+            </div>
+          </article>
+
+          <!-- Cert 5 — конференция -->
+          <article class="cert-card">
+            <div class="cert-card__preview cert-card__preview--award">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="6"/>
+                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+              </svg>
+            </div>
+            <div class="cert-card__body">
+              <div class="cert-card__year">2023</div>
+              <div class="cert-card__title">Лауреат премии «Учитель года» в номинации «Биология»</div>
+              <div class="cert-card__issuer">Министерство просвещения РФ, всероссийский этап</div>
+            </div>
+          </article>
+
+          <!-- Cert 6 — публикации -->
+          <article class="cert-card">
+            <div class="cert-card__preview">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <polyline points="2 17 12 22 22 17"/>
+                <polyline points="2 12 12 17 22 12"/>
+              </svg>
+            </div>
+            <div class="cert-card__body">
+              <div class="cert-card__year">2014 — 2025</div>
+              <div class="cert-card__title">14 научных публикаций в рецензируемых журналах</div>
+              <div class="cert-card__issuer">«Генетика», «Успехи современной биологии», «Биология в школе»</div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LATEST ARTICLES ===== -->
+    <section class="author-section" aria-label="Последние статьи автора">
+      <div class="container">
+        <div class="author-section__head">
+          <h2 class="author-section__title">Последние статьи автора</h2>
+          <a href="#" class="author-section__link">Все статьи &rarr;</a>
+        </div>
+
+        <div class="articles-grid">
+
+          <!-- Article 1 -->
+          <article class="card">
+            <a href="article.html" class="card__image">
+              <div class="card__image-placeholder" style="background: linear-gradient(135deg, #c5e1a5, #aed581);">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#7cb342" stroke-width="1" opacity="0.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="22"/></svg>
+              </div>
+            </a>
+            <div class="card__content">
+              <div class="card__top-row">
+                <span class="card__badge">Биология</span>
+                <span class="card__read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  7 мин
+                </span>
+              </div>
+              <h3 class="card__title"><a href="article.html">Строение клетки: полный разбор для ЕГЭ</a></h3>
+              <p class="card__desc">Подробный разбор строения эукариотической и прокариотической клетки, все органоиды и их функции</p>
+              <div class="card__author-row">
+                <div class="card__avatar"><div class="card__avatar-icon">ИП</div></div>
+                <span class="card__author-name">Иван Петров</span>
+                <span class="card__dot"></span>
+                <span class="card__date">12 мар 2026</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="card">
+            <a href="#" class="card__image">
+              <div class="card__image-placeholder" style="background: linear-gradient(135deg, #dcedc8, #c5e1a5);">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#7cb342" stroke-width="1" opacity="0.5"><path d="M8 12h8M12 8v8"/><circle cx="12" cy="12" r="10"/></svg>
+              </div>
+            </a>
+            <div class="card__content">
+              <div class="card__top-row">
+                <span class="card__badge">Биология</span>
+                <span class="card__read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  8 мин
+                </span>
+              </div>
+              <h3 class="card__title"><a href="#">Митоз и мейоз: отличия, которые нужно знать</a></h3>
+              <p class="card__desc">Сравнительная таблица, фазы деления, биологическое значение и типичные ошибки на ЕГЭ</p>
+              <div class="card__author-row">
+                <div class="card__avatar"><div class="card__avatar-icon">ИП</div></div>
+                <span class="card__author-name">Иван Петров</span>
+                <span class="card__dot"></span>
+                <span class="card__date">8 мар 2026</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="card">
+            <a href="#" class="card__image">
+              <div class="card__image-placeholder" style="background: linear-gradient(135deg, #c8e6c9, #a5d6a7);">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="1" opacity="0.5"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+              </div>
+            </a>
+            <div class="card__content">
+              <div class="card__top-row">
+                <span class="card__badge">Биология</span>
+                <span class="card__read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  11 мин
+                </span>
+              </div>
+              <h3 class="card__title"><a href="#">Экосистемы: структура, цепи питания, сукцессия</a></h3>
+              <p class="card__desc">Биогеоценоз, трофические уровни, экологические пирамиды и правило 10 процентов</p>
+              <div class="card__author-row">
+                <div class="card__avatar"><div class="card__avatar-icon">ИП</div></div>
+                <span class="card__author-name">Иван Петров</span>
+                <span class="card__dot"></span>
+                <span class="card__date">1 мар 2026</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 4 -->
+          <article class="card">
+            <a href="#" class="card__image">
+              <div class="card__image-placeholder" style="background: linear-gradient(135deg, #fff9c4, #fff176);">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f9a825" stroke-width="1" opacity="0.5"><path d="M12 2a7 7 0 017 7c0 3-2 5-3 7h-8c-1-2-3-4-3-7a7 7 0 017-7z"/><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="21" x2="14" y2="21"/></svg>
+              </div>
+            </a>
+            <div class="card__content">
+              <div class="card__top-row">
+                <span class="card__badge">Биология</span>
+                <span class="card__read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  12 мин
+                </span>
+              </div>
+              <h3 class="card__title"><a href="#">Эволюция: от Дарвина до современной теории</a></h3>
+              <p class="card__desc">Движущие силы эволюции, естественный отбор, дрейф генов, видообразование и макроэволюция</p>
+              <div class="card__author-row">
+                <div class="card__avatar"><div class="card__avatar-icon">ИП</div></div>
+                <span class="card__author-name">Иван Петров</span>
+                <span class="card__dot"></span>
+                <span class="card__date">24 фев 2026</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA BANNER ===== -->
+    <section class="author-cta" aria-label="Записаться на курс">
+      <div class="container">
+        <div class="author-cta__banner">
+          <div class="author-cta__text">
+            <h3>Хочешь заниматься с Иваном?</h3>
+            <p>Записывайся на курс подготовки к ЕГЭ по биологии. Разберём все задания с нуля до 90+ баллов в небольшой группе с обратной связью.</p>
+          </div>
+          <a href="#" class="author-cta__btn">Записаться на курс &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__main">
+        <div>
+          <div class="footer__logo">NeoFamily. Блог</div>
+          <p class="footer__tagline">Онлайн-школа подготовки к ЕГЭ<br>на 80+ баллов</p>
+        </div>
+        <div>
+          <div class="footer__col-title">Разделы блога</div>
+          <a href="/blog/aktualnoe/" class="footer__link">Актуальное</a>
+          <a href="/blog/ege-i-postuplenie/" class="footer__link">ЕГЭ и поступление</a>
+          <a href="/blog/biologiya/" class="footer__link">Биология</a>
+          <a href="/blog/khimiya/" class="footer__link">Химия</a>
+          <a href="/blog/russkij-yazyk/" class="footer__link">Русский язык</a>
+        </div>
+        <div>
+          <div class="footer__col-title">Компания</div>
+          <a href="/about/" class="footer__link">О нас</a>
+          <a href="/teachers/" class="footer__link">Преподаватели</a>
+          <a href="/reviews/" class="footer__link">Отзывы</a>
+          <a href="/contacts/" class="footer__link">Контакты</a>
+          <a href="/shop/" class="footer__link">Магазин</a>
+        </div>
+        <div>
+          <div class="footer__col-title">Соцсети</div>
+          <div class="footer__social">
+            <a href="#" class="footer__social-icon" aria-label="ВКонтакте">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.587-1.496c.598-.188 1.368 1.259 2.183 1.815.616.42 1.084.328 1.084.328l2.175-.03s1.14-.07.599-.964c-.044-.073-.314-.661-1.618-1.869-1.366-1.265-1.183-1.06.462-3.248.862-1.15 1.37-2.027 1.243-2.356-.12-.306-.86-.225-.86-.225l-2.446.015s-.181-.025-.316.056c-.131.079-.216.264-.216.264s-.388 1.033-.905 1.912c-1.09 1.854-1.527 1.953-1.705 1.838-.415-.268-.311-1.076-.311-1.649 0-1.793.271-2.54-.529-2.734-.266-.064-.461-.107-1.14-.114-.872-.009-1.608.003-2.025.207-.277.136-.491.439-.361.456.16.022.524.098.717.36.248.339.24 1.098.24 1.098s.143 2.11-.333 2.371c-.327.18-.775-.187-1.736-1.865-.492-.859-.864-1.81-.864-1.81s-.072-.176-.2-.271c-.155-.115-.372-.151-.372-.151l-2.323.015s-.349.01-.477.161c-.114.135-.009.413-.009.413s1.825 4.274 3.892 6.426c1.895 1.973 4.047 1.843 4.047 1.843h.975z"/></svg>
+            </a>
+            <a href="#" class="footer__social-icon footer__social-icon--tg" aria-label="Telegram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 1 0 24 12.056A12.014 12.014 0 0 0 11.944 0Zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472c-.18 1.898-.962 6.502-1.36 8.627c-.168.9-.499 1.201-.82 1.23c-.696.065-1.225-.46-1.9-.902c-1.056-.693-1.653-1.124-2.678-1.8c-1.185-.78-.417-1.21.258-1.91c.177-.184 3.247-2.977 3.307-3.23c.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345c-.48.33-.913.49-1.302.48c-.428-.008-1.252-.241-1.865-.44c-.752-.245-1.349-.374-1.297-.789c.027-.216.325-.437.893-.663c3.498-1.524 5.83-2.529 6.998-3.014c3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            </a>
+            <a href="#" class="footer__social-icon footer__social-icon--yt" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <hr class="footer__divider">
+      <div class="footer__bottom">
+        <span class="footer__copyright">&copy; 2026 NeoFamily. Все права защищены.</span>
+        <a href="/privacy/" class="footer__privacy">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll shadow
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
