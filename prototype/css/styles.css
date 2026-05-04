@@ -2103,7 +2103,1025 @@ nav.breadcrumbs a:hover {
 }
 
 /* ==========================================================================
-   29. Responsive
+   29. Promo Hero (promo.html) — Стикерборд
+   ========================================================================== */
+
+.promo-hero {
+  padding: 24px 0 32px;
+}
+
+.promo-hero__stage {
+  position: relative;
+  background: #FFF8EC;
+  background-image:
+    radial-gradient(circle at 20% 15%, rgba(255,198,69,0.18) 0, transparent 35%),
+    radial-gradient(circle at 85% 85%, rgba(233,88,90,0.14) 0, transparent 40%),
+    radial-gradient(circle at 70% 20%, rgba(106,92,144,0.10) 0, transparent 35%);
+  border-radius: 36px;
+  padding: 64px 56px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* -- Огромный %-знак на фоне -- */
+
+.promo-hero__giant {
+  position: absolute;
+  right: -40px;
+  bottom: -120px;
+  font-family: var(--font-heading);
+  font-size: 480px;
+  font-weight: 700;
+  line-height: 0.8;
+  color: #1D1E1B;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+  letter-spacing: -0.05em;
+}
+
+/* -- Декоративные элементы -- */
+
+.promo-hero__deco {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.promo-hero__deco--star {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--cat-actual);
+  animation: promo-spin 8s linear infinite;
+}
+
+.promo-hero__deco--star-1 {
+  top: 32px;
+  left: 38%;
+  color: var(--cat-rus);
+}
+
+.promo-hero__deco--star-2 {
+  bottom: 48px;
+  left: 8%;
+  font-size: 20px;
+  color: var(--cat-bio);
+  animation-direction: reverse;
+  animation-duration: 12s;
+}
+
+@keyframes promo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.promo-hero__deco--dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--cat-chem);
+}
+
+.promo-hero__deco--dot-1 { top: 80px; left: 8%; background: var(--cat-chem); }
+.promo-hero__deco--dot-2 { top: 24%; right: 4%; background: var(--cat-actual); width: 16px; height: 16px; }
+.promo-hero__deco--dot-3 { bottom: 25%; left: 4%; background: var(--cat-rus); width: 8px; height: 8px; }
+
+.promo-hero__deco--squiggle {
+  bottom: 80px;
+  right: 10%;
+  width: 80px;
+  height: 24px;
+  color: var(--cat-ege);
+  opacity: 0.6;
+}
+
+.promo-hero__deco--squiggle svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* -- Сетка hero -- */
+
+.promo-hero__grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+}
+
+/* -- Левая колонка: текст -- */
+
+.promo-hero__content {
+  position: relative;
+}
+
+.promo-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px 8px 14px;
+  background: #FFFFFF;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text-heading);
+  text-transform: uppercase;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  margin-bottom: 28px;
+}
+
+.promo-hero__eyebrow-pulse {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  flex-shrink: 0;
+}
+
+.promo-hero__eyebrow-pulse::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: var(--primary);
+  opacity: 0.4;
+  animation: promo-pulse 1.6s ease-out infinite;
+}
+
+@keyframes promo-pulse {
+  0%   { transform: scale(0.5); opacity: 0.5; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+.promo-hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(40px, 5.6vw, 72px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--text-heading);
+  margin-bottom: 20px;
+}
+
+.promo-hero__mark {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.promo-hero__mark::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  right: -6px;
+  bottom: 4px;
+  height: 38%;
+  background: var(--cat-actual);
+  border-radius: 4px;
+  z-index: -1;
+  transform: skew(-3deg);
+}
+
+.promo-hero__lead {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  max-width: 520px;
+  margin-bottom: 36px;
+}
+
+.promo-hero__bottom {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.promo-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 28px;
+  background: var(--text-heading);
+  color: #FFFFFF;
+  border-radius: 18px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 6px 20px rgba(29,30,27,0.25);
+}
+
+.promo-hero__cta:hover {
+  transform: translateY(-2px);
+  background: var(--primary);
+  box-shadow: 0 10px 28px rgba(233,88,90,0.35);
+}
+
+.promo-hero__cta svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+.promo-hero__cta:hover svg {
+  transform: translateY(3px);
+}
+
+.promo-hero__count {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.promo-hero__count-num {
+  font-family: var(--font-heading);
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--primary);
+  letter-spacing: -0.04em;
+}
+
+.promo-hero__count-label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* -- Правая колонка: стикерборд -- */
+
+.promo-hero__board {
+  position: relative;
+  height: 460px;
+  z-index: 2;
+}
+
+.promo-hero__sticker {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: #FFFFFF;
+  box-shadow: 0 12px 32px rgba(29,30,27,0.18);
+  transition: transform 0.3s cubic-bezier(.34,1.56,.64,1);
+  cursor: default;
+}
+
+.promo-hero__sticker:hover {
+  transform: rotate(0deg) scale(1.05) !important;
+  z-index: 5;
+}
+
+/* Стикер -500₽ */
+.promo-hero__sticker--500 {
+  top: 8%;
+  left: 8%;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #F27C82, var(--primary));
+  transform: rotate(-12deg);
+  flex-direction: row;
+  gap: 2px;
+  animation: promo-float-1 5s ease-in-out infinite;
+}
+
+.promo-hero__sticker--500::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 2px dashed rgba(255,255,255,0.55);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.promo-hero__sticker-minus {
+  font-size: 56px;
+  line-height: 0.8;
+  font-weight: 700;
+}
+
+.promo-hero__sticker-amount {
+  font-size: 56px;
+  line-height: 0.8;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.promo-hero__sticker-cur {
+  font-size: 36px;
+  line-height: 0.8;
+  margin-left: 4px;
+  font-weight: 700;
+}
+
+/* Стикер 5% */
+.promo-hero__sticker--five {
+  top: 4%;
+  right: 6%;
+  width: 130px;
+  height: 130px;
+  background: var(--cat-actual);
+  color: #1D1E1B;
+  transform: rotate(8deg);
+  border-radius: 28px;
+  flex-direction: row;
+  gap: 0;
+  animation: promo-float-2 4.5s ease-in-out infinite 0.4s;
+}
+
+.promo-hero__sticker-five-num {
+  font-size: 64px;
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+}
+
+.promo-hero__sticker-five-pct {
+  font-size: 48px;
+  line-height: 0.8;
+}
+
+/* Стикер «май 2026» — отрывной календарь */
+.promo-hero__sticker--tape {
+  bottom: 6%;
+  right: 4%;
+  width: 150px;
+  padding: 22px 14px 18px;
+  background: #FFFFFF;
+  color: var(--text-heading);
+  border-radius: 8px;
+  transform: rotate(6deg);
+  flex-direction: column;
+  gap: 4px;
+  animation: promo-float-3 5.5s ease-in-out infinite 0.8s;
+}
+
+.promo-hero__sticker--tape::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  height: 1px;
+  background: var(--border-light);
+}
+
+.promo-hero__sticker-tape {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 60px;
+  height: 18px;
+  background: rgba(255,198,69,0.65);
+  border-left: 1px dashed rgba(0,0,0,0.06);
+  border-right: 1px dashed rgba(0,0,0,0.06);
+}
+
+.promo-hero__sticker-month {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--primary);
+  text-transform: uppercase;
+}
+
+.promo-hero__sticker-year {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+/* Стикер кода NEO500 */
+.promo-hero__sticker--neo {
+  bottom: 28%;
+  left: 0;
+  padding: 14px 22px;
+  background: var(--text-heading);
+  color: #FFFFFF;
+  border-radius: 12px;
+  transform: rotate(-6deg);
+  font-family: 'Courier New', 'Consolas', monospace;
+  font-size: 18px;
+  letter-spacing: 2px;
+  border: 2px dashed rgba(255,255,255,0.35);
+  animation: promo-float-2 4.8s ease-in-out infinite 1.2s;
+}
+
+@keyframes promo-float-1 {
+  0%, 100% { transform: rotate(-12deg) translateY(0); }
+  50%      { transform: rotate(-10deg) translateY(-10px); }
+}
+
+@keyframes promo-float-2 {
+  0%, 100% { transform: rotate(8deg) translateY(0); }
+  50%      { transform: rotate(10deg) translateY(-8px); }
+}
+
+@keyframes promo-float-3 {
+  0%, 100% { transform: rotate(6deg) translateY(0); }
+  50%      { transform: rotate(4deg) translateY(-12px); }
+}
+
+/* -- Полароиды преподавателей -- */
+
+.promo-hero__polaroids {
+  position: absolute;
+  bottom: 8%;
+  left: 18%;
+  display: flex;
+  gap: 0;
+}
+
+.promo-hero__polaroid {
+  position: relative;
+  background: #FFFFFF;
+  padding: 8px 8px 24px;
+  border-radius: 4px;
+  box-shadow: 0 8px 20px rgba(29,30,27,0.18);
+  text-align: center;
+  width: 78px;
+  margin-left: -16px;
+  transition: transform 0.3s cubic-bezier(.34,1.56,.64,1);
+}
+
+.promo-hero__polaroid:first-child { margin-left: 0; }
+
+.promo-hero__polaroid--1 { transform: rotate(-8deg); z-index: 1; }
+.promo-hero__polaroid--2 { transform: rotate(4deg);  z-index: 2; }
+.promo-hero__polaroid--3 { transform: rotate(-3deg); z-index: 3; }
+.promo-hero__polaroid--4 { transform: rotate(7deg);  z-index: 4; }
+
+.promo-hero__polaroid:hover {
+  transform: rotate(0deg) translateY(-6px) scale(1.08);
+  z-index: 6;
+}
+
+.promo-hero__polaroid-photo {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 22px;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+}
+
+.promo-hero__polaroid-name {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-body);
+  letter-spacing: 0.02em;
+}
+
+/* ==========================================================================
+   30. Promo List & Card (promo.html)
+   ========================================================================== */
+
+.promo-list-section {
+  padding: 32px 0 48px;
+}
+
+.promo-month-pill {
+  display: inline-block;
+  padding: 6px 16px;
+  background: var(--bg-light);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.promo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.promo-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 220px 1fr 240px;
+  gap: 32px;
+  align-items: center;
+  padding: 24px 28px;
+  background: var(--bg-white);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.promo-card:hover {
+  border-color: transparent;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Left accent bar */
+.promo-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 24px;
+  bottom: 24px;
+  width: 4px;
+  border-radius: 0 4px 4px 0;
+  background: var(--cat-actual);
+}
+
+.promo-card[data-cat="actual"]::before { background: var(--cat-actual); }
+.promo-card[data-cat="bio"]::before    { background: var(--cat-bio); }
+.promo-card[data-cat="chem"]::before   { background: var(--cat-chem); }
+.promo-card[data-cat="rus"]::before    { background: var(--cat-rus); }
+.promo-card[data-cat="ege"]::before    { background: var(--cat-ege); }
+
+/* -- Tag column -- */
+
+.promo-card__tag {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.promo-card__tag-pill {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: var(--cat-actual);
+  width: fit-content;
+  line-height: 1.2;
+}
+
+.promo-card[data-cat="actual"] .promo-card__tag-pill { background: var(--cat-actual); color: #1D1E1B; }
+.promo-card[data-cat="bio"]    .promo-card__tag-pill { background: var(--cat-bio);    color: #1D1E1B; }
+.promo-card[data-cat="chem"]   .promo-card__tag-pill { background: var(--cat-chem); }
+.promo-card[data-cat="rus"]    .promo-card__tag-pill { background: var(--cat-rus); }
+.promo-card[data-cat="ege"]    .promo-card__tag-pill { background: var(--cat-ege); }
+
+.promo-card__tag-sub {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* -- Body -- */
+
+.promo-card__body {
+  min-width: 0;
+}
+
+.promo-card__title {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.promo-card__desc {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* -- Action -- */
+
+.promo-card__action {
+  justify-self: end;
+  width: 100%;
+  max-width: 240px;
+}
+
+.promo-card__btn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 20px;
+  background: var(--text-heading);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 14px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  line-height: 1.2;
+}
+
+.promo-card__btn:hover {
+  background: var(--primary);
+  transform: translateY(-1px);
+}
+
+.promo-card__btn-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.promo-card__code {
+  display: flex;
+  align-items: stretch;
+  border: 2px dashed var(--primary);
+  border-radius: 14px;
+  background: rgba(233, 88, 90, 0.06);
+  overflow: hidden;
+  animation: promo-reveal 0.25s ease;
+}
+
+@keyframes promo-reveal {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.promo-card__code-value {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  font-family: 'Courier New', 'Consolas', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--primary);
+  user-select: all;
+}
+
+.promo-card__copy {
+  width: 48px;
+  flex-shrink: 0;
+  border: none;
+  background: var(--primary);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.promo-card__copy:hover {
+  background: var(--primary-hover);
+}
+
+.promo-card__copy svg {
+  width: 18px;
+  height: 18px;
+}
+
+.promo-list__hint {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px;
+  background: var(--bg-light);
+  border-radius: 14px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.promo-list__hint svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--primary);
+}
+
+/* ==========================================================================
+   31. Toast (promo.html)
+   ========================================================================== */
+
+.promo-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  transform: translate(-50%, 24px);
+  padding: 14px 24px;
+  background: var(--text-heading);
+  color: #FFFFFF;
+  border-radius: 14px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 1000;
+}
+
+.promo-toast--visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ==========================================================================
+   32. Course Cards (promo.html — Актуальные курсы)
+   ========================================================================== */
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.course-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 36px;
+  border-radius: var(--radius-lg);
+  color: #FFFFFF;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  min-height: 260px;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.course-card--v1 {
+  background: linear-gradient(135deg, #6A5C90, #8B7EB8);
+}
+
+.course-card--v2 {
+  background: linear-gradient(135deg, #E9585A, #F27C82);
+}
+
+.course-card__decor {
+  position: absolute;
+  right: -60px;
+  top: -60px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.course-card__tag {
+  align-self: flex-start;
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  backdrop-filter: blur(4px);
+}
+
+.course-card__title {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.course-card__desc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  opacity: 0.92;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.course-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.course-card__price {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.course-card__price-old {
+  font-size: 13px;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.course-card__price-new {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.course-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 20px;
+  background: #FFFFFF;
+  color: var(--text-heading);
+  border-radius: 14px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+
+.course-card__cta svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+
+.course-card:hover .course-card__cta svg {
+  transform: translateX(3px);
+}
+
+.course-card--v2 .course-card__cta { color: var(--primary); }
+
+/* ==========================================================================
+   33. Promo page — Responsive
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .promo-hero__stage {
+    padding: 48px 32px;
+  }
+
+  .promo-hero__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .promo-hero__board {
+    height: 320px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .promo-hero__giant {
+    font-size: 360px;
+    bottom: -80px;
+    right: -20px;
+  }
+
+  .promo-card {
+    grid-template-columns: 200px 1fr;
+    gap: 24px;
+  }
+
+  .promo-card__action {
+    grid-column: 1 / -1;
+    max-width: 320px;
+    justify-self: stretch;
+  }
+
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .promo-hero {
+    padding: 12px 0 24px;
+  }
+
+  .promo-hero__stage {
+    padding: 36px 22px 32px;
+    border-radius: 28px;
+  }
+
+  .promo-hero__lead {
+    font-size: 16px;
+  }
+
+  .promo-hero__count-num {
+    font-size: 44px;
+  }
+
+  .promo-hero__board {
+    height: 280px;
+  }
+
+  .promo-hero__sticker--500 {
+    width: 130px;
+    height: 130px;
+  }
+
+  .promo-hero__sticker--500 .promo-hero__sticker-minus,
+  .promo-hero__sticker--500 .promo-hero__sticker-amount {
+    font-size: 38px;
+  }
+
+  .promo-hero__sticker--500 .promo-hero__sticker-cur {
+    font-size: 26px;
+  }
+
+  .promo-hero__sticker--five {
+    width: 90px;
+    height: 90px;
+    border-radius: 20px;
+  }
+
+  .promo-hero__sticker-five-num { font-size: 44px; }
+  .promo-hero__sticker-five-pct { font-size: 32px; }
+
+  .promo-hero__sticker--tape {
+    width: 110px;
+    padding: 18px 12px 14px;
+  }
+
+  .promo-hero__sticker-year { font-size: 28px; }
+
+  .promo-hero__polaroid {
+    width: 56px;
+    padding: 6px 6px 18px;
+  }
+
+  .promo-hero__polaroid-photo { font-size: 16px; }
+
+  .promo-hero__giant {
+    font-size: 240px;
+    bottom: -50px;
+  }
+
+  .promo-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .promo-card::before {
+    top: 0;
+    left: 20px;
+    right: 20px;
+    bottom: auto;
+    width: auto;
+    height: 4px;
+    border-radius: 0 0 4px 4px;
+  }
+
+  .promo-card__action {
+    max-width: 100%;
+  }
+
+  .promo-card__title {
+    font-size: 17px;
+  }
+
+  .course-card {
+    padding: 28px;
+  }
+
+  .course-card__title {
+    font-size: 22px;
+  }
+
+  .course-card__meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ==========================================================================
+   34. Responsive
    ========================================================================== */
 
 @media (min-width: 1360px) {
